@@ -4,20 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>VUE</title>
 </head>
 <body>
     <div id="app"> <!--construção da view para o usuário-->
-    {{message}}
-    </div>
+    <div>{{ message }}</div> <!-- v-on:click = diretiva que diz ao meu codigo o que fazer-->
+        <button v-on:click="reverseMessage">Inverter Mensagem</button>
+</div>
 
     <script>
-        var app = new Vue({
+        const app = {
             elemento: "app",
-            data:{      //esta associado com o model
-                message: "Oi turma"
+            data() {      //esta associado com o model
+                return{
+                    message: "Mensagem"
+                }
+            },
+            methods:{
+                reverseMessage(){
+                    this.message = this.message
+                    .split("")
+                    .reverse()
+                    .join("")
+                }
             }
-        })
+        }
+        Vue.createApp(App).mount("#app")
     </script>
 </body>
 </html>
