@@ -9,10 +9,21 @@
 </head>
 <body>
     <div id="app"> <!--construção da view para o usuário-->
-    <div>{{ message }}</div> <!-- v-on:click = diretiva que diz ao meu codigo o que fazer-->
-        <button v-on:click="reverseMessage">Inverter Mensagem</button>
-</div>
+        <div>{{ message }}</div> <!-- v-on:click = diretiva que diz ao meu codigo o que fazer-->
+            <button v-on:click="reverseMessage">Inverter Mensagem</button>
+        </div>
+        <div>
+            </div>
+        <div>
+            <div id="image">
+                {{ image }}
+            </div>
+            <button   v-on:click="showImage" >Mostrar imagem</button>
+        <div>
 
+    </div>
+
+</div>
     <script>
         const App = {
          data() {      //esta associado com o model
@@ -27,9 +38,24 @@
                     .reverse()
                     .join("")
                 }
+            }                  
+
+        }
+
+        const AppImage = {
+            data(){
+                return{
+                    image: "Imagem"
+                }
+            },
+            methods:{
+                showImage(){
+                    this.image = "//exercicioAula1/image/extraterrestre.png"
+                }
             }
         }
-        Vue.createApp(App).mount("#app")
+       Vue.createApp(App).mount("#app")
+        Vue.createApp(AppImage).mount("#image")
     </script>
 </body>
 </html>
