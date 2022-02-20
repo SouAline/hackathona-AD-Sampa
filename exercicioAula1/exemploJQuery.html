@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+30JU%yExlq6GSYGSHk"></script>
+    <title>Vue Com JQuery</title>
+    <style>
+        .done{
+            color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <ul id="js-items"></ul>
+    <script>
+        $(function() {
+            $.get( './data.json') //importanto o arquivo 
+            .then(data => {
+                const $itemsUL = $('#js-items')
+                if ( !data.items.length ){ //verificando se a lista está vazia
+                    const $noItems = $('<li>')
+                    $noItems.text('Lista Vazia') //exibe uma mensagem na tela se a lista estiver vazia
+                    $itemsUL.append($noItems)
+                }else{
+                    data.items.forEach ( function ( item ) { // se não estiver vazia, percorre a lista
+                        const $newItem = $("<li>")
+                        $newItem.text(item.task)
+                        if ( item.status ) // se o status da task for true ele exibe o nome da task na cor adicionada na classse .done
+                        $newItem.addClass("done")
+                        $itemsUL.append($newItem)
+                    });
+                }
+            })
+        })
+    </script>
+</body>
+</html>
