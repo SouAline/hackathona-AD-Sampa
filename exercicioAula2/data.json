@@ -1,0 +1,8 @@
+[
+    {"id": 1, "quantity": 0, "name": "meia" },
+    {"id": 2, "quantity": 10, "name": "Tênis" },
+    {"id": 3, "quantity": 5, "name": "Camisa" },
+    {"id": 4, "quantity": 4, "name": "Sapato" },
+    {"id": 5, "quantity": 1, "name": "Boné" }
+
+]
