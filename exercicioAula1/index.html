@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Com Vue</title>
+    <style>
+        .done{
+            color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <ul id="js-items">
+        <li v-if="!items.length"> Lista vazia</li> <!-- se a lista estiver vazia ela já mostra a tela a mensagem "Lista vazia"-->
+        <li v-for="item in items" :class ="done" :item.status>
+            {{ item. task }} <!-- tras o nome do item que esta na lista-->
+        </li>
+    </ul>
+    <script>
+        Vue.createApp({
+            data(){
+                return{
+                    items: []
+                }
+            }, 
+            created() {
+                fetch ('./data.json')
+                .then(res => res.json())
+                .then(data =>{
+                    this.items=data.items
+                })
+            },
+        }).mount('#js-items')
+    </script>
+</body>
+</html>
