@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src ="https://unpkg.com/vue@next"></script>
+    <title>TP-1-Aline</title>
+    <style>
+        .cor {
+            color: rgb(161, 12, 129);
+        }
+    </style>
+</head>
+<body>
+     <ul id="js-tarefas">
+        <h1>Lista de tarefas</h1>
+            <li v-if="!tarefas.length">Lista Vazia de Tarefas</li>
+            <li v-for="tarefa in tarefas" :class="{ 'cor ' :tarefa.estaCompleta}">                    {{ tarefa.descricao }}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    tarefas: []
+                }
+            },
+            created() {
+                fetch('./data.json')
+                .then(res=> res.json())
+                .then(data => {
+                    this.tarefas= data.tarefas
+                })
+            },
+        }).mount('#js-tarefas')
+    </script>
+</body>
+</html>

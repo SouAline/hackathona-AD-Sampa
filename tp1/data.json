@@ -1,0 +1,8 @@
+{
+    "tarefas": [
+    {"id": 1, "descricao": "Ler", "estaCompleta": true},
+    {"id": 2, "descricao": "Cozinhar", "estaCompleta": false },
+    {"id": 3, "descricao": "Estudar", "estaCompleta": true },
+    {"id": 4, "descricao": "Sair", "estaCompleta": false }
+    ]
+}
