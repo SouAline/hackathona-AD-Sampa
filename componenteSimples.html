@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+
+
+    </div>
+
+    <script>
+        //criamos a aplicação vue com create app
+        const app = Vue.createApp({
+            template : `<button-counter></button-counter>`
+        })
+        //Definindo um componete global chamado button-couter
+        app.component( 'button-counter', { //aqui dentro vai o nome do componente pode também nomear como ButtonCounter
+            data( ) {
+                return {
+                    count: 0
+                }
+            },
+            template:
+                `<button @click="count++">
+                        contador: {{ count }}, 
+                </button>`
+            })
+            //Monta a instancia no DOM
+            app.mount('#app')
+    </script>
+
+    </body>
+</html>
