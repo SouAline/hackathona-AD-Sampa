@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
+    <title>Rotas com VueRouter</title>
+</head>
+<body>
+    <div id="app">
+        <a @click="currentRoute='/' " style="cursor: pointer;">Home</a> |
+        <a @click="currentRoute='/contato' " style="cursor: pointer;">Contato</a>
+        <component :is="currentComponent"></component>
+    </div>
+    <script>
+        const HomeComponent = { template: '<h1>Página Home' }
+        const ContatoComponent = { template: '<h1>Página Contato' }
+        const SimpleRouter = {
+            template: ``,
+            data: () =>({
+                currentRoute: '/'
+            }),
+            computed: {
+                currentComponent(){
+                    return this.currentRoute
+                }
+            },
+        }
+        const app = Vue.createApp(SimpleRouter)
+        app.component('/', HomeComponent)
+        app.component('/contato', ContatoComponent)
+        app.mount('#app')
+</script>
+</body>
+</html>
