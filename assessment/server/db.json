@@ -1,0 +1,54 @@
+{
+  "contatos": [
+    {
+      "nome": "Aline",
+      "email": "ds.alinesouza@gmail.com",
+      "empresa": "HP Inc",
+      "telefone": "33333333333333",
+      "cargo": "SSSSSSSSSSS",
+      "id": 1
+    },
+    {
+      "nome": "Aline",
+      "email": "ds.alinesouza@gmail.com",
+      "empresa": "HP Inc",
+      "cargo": "CASDCCC",
+      "telefone": "6666666666666",
+      "id": 2
+    },
+    {
+      "nome": "aLINE",
+      "foto": "ERGSEG",
+      "email": "SDGDTGST@KKKKK.COM",
+      "telefone": 33333,
+      "empresa": "FFFFF",
+      "cargo": "FFFFF",
+      "grupoId": "",
+      "id": 3
+    },
+    {
+      "nome": "Julia",
+      "foto": "",
+      "email": "ds.alinesouza@gmail.com",
+      "telefone": 33333,
+      "empresa": "HP Inc",
+      "cargo": "Frontend",
+      "grupoId": "",
+      "id": 4
+    }
+  ],
+  "grupo": [
+    {
+      "id": "1",
+      "nome": "Família"
+    },
+    {
+      "id": "2",
+      "nome": "Faculdade"
+    },
+    {
+      "id": "3",
+      "nome": "Amigos"
+    }
+  ]
+}
